@@ -1,0 +1,16 @@
+image: gitpod/workspace-full:latest
+
+tasks:
+  - init: npm install
+    command: npm run dev
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+    - bradlc.vscode-tailwindcss
+    - eamodio.gitlens
