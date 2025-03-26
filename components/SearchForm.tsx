@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 
 type SearchFormProps = {
-  onSearch: (username: string) => void;  // 親から渡されるコールバック関数
+  onSearch: (username: string) => void; // 親から渡されるコールバック関数
 };
 
 export default function SearchForm({ onSearch }: SearchFormProps) {
@@ -11,7 +11,7 @@ export default function SearchForm({ onSearch }: SearchFormProps) {
     e.preventDefault();
     if (inputValue.trim() === "") return;
     onSearch(inputValue.trim());
-    setInputValue("");  // 入力欄をクリア
+    setInputValue(""); // 入力欄をクリア
   };
 
   return (

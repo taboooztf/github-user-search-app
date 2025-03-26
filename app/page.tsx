@@ -1,4 +1,4 @@
-'use client';  // ← App Router でクライアントコンポーネントを使う場合はこれを必ず最初に書く！
+"use client"; // ← App Router でクライアントコンポーネントを使う場合はこれを必ず最初に書く！
 
 import { fetchUserData, GitHubUser } from "../utils/fetchUserData";
 import { useState } from "react";
