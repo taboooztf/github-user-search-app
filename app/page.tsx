@@ -3,6 +3,7 @@
 import { fetchUserData, GitHubUser } from "../utils/fetchUserData";
 import { useState } from "react";
 import SearchForm from "../components/SearchForm";
+import UserCard from "../components/UserCard";
 
 export default function HomePage() {
   const [userData, setUserData] = useState<GitHubUser | null>(null);
@@ -27,13 +28,13 @@ export default function HomePage() {
       <SearchForm onSearch={handleSearch} />
       {error && <p className="text-red-500 mt-4">{error}</p>}
       {userData && (
-        <div className="mt-6">
-          <p>ユーザー名: {userData.login}</p>
-          <p>フォロワー: {userData.followers}</p>
-          <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
-            プロフィールを見る
-          </a>
-        </div>
+        <UserCard
+          avatar_url={userData.avatar_url}
+          login={userData.login}
+          html_url={userData.html_url}
+          followers={userData.followers}
+          public_repos={userData.public_repos}
+        />
       )}
     </main>
   );
